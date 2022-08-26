@@ -12,6 +12,8 @@ def map(val, from_beg, to_beg, from_end, to_end):
 def to_bin(num):
     int(num)
     bin = ""
+    if num == 0:
+        return "0"
     while (num != 0):
         rem = num%2
         bin += str(rem)

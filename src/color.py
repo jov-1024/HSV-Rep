@@ -1,3 +1,5 @@
+import maths
+
 class hsv:
     def __init__(self, hue, sat, val):
         self._hue = hue
@@ -25,7 +27,11 @@ class hsv:
         elif 5 <= h and h < 6:
             temp = [c, 0, x]
         m = self._val - c
-        temp = list(map(lambda x: str(x + m), temp))
+        temp = list(map(lambda x: x + m, temp))
+        temp = list(map(lambda x: maths.to_hex(maths.to_bin(int(maths.map(x, 0.0, 1.0, 0.0, 255.0)))), temp))
+        for i in range(len(temp)):
+            if len(temp[i]) == 1:
+                temp[i] = "0" + temp[i]
         
         return '#' + temp[0] + temp[1] + temp[2]
 
