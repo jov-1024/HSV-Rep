@@ -38,4 +38,4 @@ class hsv:
     #find a complementary high contrast color for text and return another HSV object
     #TODO
     def find_complement(self):
-        return hsv(360 - self._hue, 1.0 - self._sat, 1.0 - self._val)
+        return hsv((180 + self._hue)%360, self._sat, 1 - self._val)

@@ -24,8 +24,8 @@ class window:
         self.but = tk.Button(self.root, text="Apply Color", command=self.button_press).grid(column=0, row=3, padx=10, pady=10, columnspan=2)
         self.color_bg = col
         self.color_fg = col.find_complement()
-        self.root.mainloop()
         self.update_color()
+        self.root.mainloop()
 
     def button_press(self):
         hue = float(self.entry_h.get())
@@ -58,4 +58,3 @@ class window:
             i["fg"] = fg
             i["bg"] = bg
             i["selectborderwidth"] = 1
-win = window(color.hsv(120, 1.0, 1.0))
